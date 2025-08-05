@@ -229,12 +229,13 @@ function Customizer() {
 					</div>
 				</div>
 				<footer>
-					<p>
-						© 2023{' '}
-						<a href='https://gaetanjestin.com' target='_blank'>
-							Gaëtan Jestin
+					<p style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center' }}>
+					
+						<a href='https://troisiemeoeil.io' target='_blank'>
+							© 2023{' '}
+							Ahmed Bk.
 						</a>
-						, Not affiliated in any ways with{' '}
+						
 						<a href='https://www.bellhelmets.com/' target='_blank'>
 							Bell Helmets
 						</a>
