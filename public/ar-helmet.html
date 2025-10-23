@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Helmet AR Viewer</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.js"></script>
+    <style>
+      body, html { margin: 0; padding: 0; overflow: hidden; }
+      #instructions {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100vw;
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+        font-family: sans-serif;
+        background: rgba(0,0,0,0.4);
+        padding: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="instructions">
+      Point your camera at the marker to view the helmet in AR.<br>
+      <a href="https://ar-js-org.github.io/AR.js-Docs/marker-training/examples/marker/hiro.png" target="_blank" style="color:#fff;text-decoration:underline;">Download marker</a>
+    </div>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      <!-- Replace the glTF model path with your actual helmet model file -->
+      <a-marker preset="hiro">
+        <a-entity
+          gltf-model="url(helmet.gltf)"
+          scale="0.5 0.5 0.5"
+          rotation="0 0 0"
+          position="0 0 0"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

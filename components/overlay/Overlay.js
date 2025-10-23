@@ -2,8 +2,6 @@ import { useSnapshot } from 'valtio'
 import { state } from '../../utils/store'
 import { HexColorPicker } from 'react-colorful'
 import { useState, useRef } from 'react'
-import { ARButton } from 'three/examples/jsm/webxr/ARButton.js'
-import * as THREE from 'three'
 
 export default function Overlay() {
 	const snap = useSnapshot(state)
@@ -63,35 +61,9 @@ function Customizer() {
 		p.offsetHeight === 0 ? (p.style.maxHeight = `50px`) : (p.style.maxHeight = 0)
 	}
 
-	// XR/AR feature: launches a simple AR scene with Three.js and ARButton
+	// AR.js integration: open a new page with AR.js helmet marker
 	function startAR() {
-		if (!arContainerRef.current) return
-
-		// Remove previous renderer if exists
-		arContainerRef.current.innerHTML = ''
-
-		const scene = new THREE.Scene()
-		const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20)
-		const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-		renderer.setSize(window.innerWidth, window.innerHeight)
-		renderer.xr.enabled = true
-		arContainerRef.current.appendChild(renderer.domElement)
-		document.body.appendChild(ARButton.createButton(renderer))
-		// Add AR button
-		// arContainerRef.current.appendChild(ARButton.createButton(renderer))
-
-		// Example helmet geometry (replace with your helmet model loader)
-		const geometry = new THREE.SphereGeometry(0.15, 32, 32)
-		const material = new THREE.MeshNormalMaterial()
-		const helmet = new THREE.Mesh(geometry, material)
-		scene.add(helmet)
-
-		function animate() {
-			renderer.setAnimationLoop(() => {
-				renderer.render(scene, camera)
-			})
-		}
-		animate()
+		window.open('/ar-helmet.html', '_blank')
 	}
 
 	return (
