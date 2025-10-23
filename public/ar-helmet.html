@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            width: 100%;
+            height: auto;
         }
 
         #instructions {
@@ -29,10 +31,7 @@
 </head>
 
 <body>
-    <div id="instructions">
-        Tap the AR button to view the helmet in your space.<br>
-        (Works on most Android and iOS devices)
-    </div>
+   
     <model-viewer ar camera-controls touch-action="pan-y" auto-rotate src="./outer-shell.glb"
         alt="A 3D model of an astronaut">
         <button slot="ar-button"
