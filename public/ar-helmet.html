@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Helmet AR Viewer</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <style>
-      body, html { margin: 0; padding: 0; overflow: hidden; }
-      #instructions {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        width: 100vw;
-        text-align: center;
-        color: #fff;
-        z-index: 2;
-        font-family: sans-serif;
-        background: rgba(0,0,0,0.4);
-        padding: 8px 0;
-      }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100vw;
+            text-align: center;
+            color: #fff;
+            z-index: 2;
+            font-family: sans-serif;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 0;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="instructions">
-      Tap the AR button to view the helmet in your space.<br>
-      (Works on most Android and iOS devices)
+        Tap the AR button to view the helmet in your space.<br>
+        (Works on most Android and iOS devices)
     </div>
-    <model-viewer
-      src="outer-shell.glb"
-      ar
-      ar-modes="scene-viewer quick-look webxr"
-      camera-controls
-      auto-rotate
-      style="width: 100vw; height: 100vh;"
-      alt="Helmet model"
-    ></model-viewer>
-  </body>
+    <model-viewer src="outer-shell.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls reveal="interaction"
+        auto-rotate style="width: 100vw; height: 100vh;" alt="Helmet model"></model-viewer>
+</body>
+
 </html>
