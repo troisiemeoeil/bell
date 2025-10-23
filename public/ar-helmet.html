@@ -33,8 +33,13 @@
         Tap the AR button to view the helmet in your space.<br>
         (Works on most Android and iOS devices)
     </div>
-    <model-viewer src="outer-shell.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls reveal="interaction"
-        auto-rotate style="width: 100vw; height: 100vh;" alt="Helmet model"></model-viewer>
+    <model-viewer ar camera-controls touch-action="pan-y" auto-rotate src="./outer-shell.glb"
+        alt="A 3D model of an astronaut">
+        <button slot="ar-button"
+            style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+            👋 Activate AR
+        </button>
+    </model-viewer>
 </body>
 
 </html>
