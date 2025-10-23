@@ -261,7 +261,7 @@ function Customizer() {
                         ))}
                     </div>
                     {/* AR Container for rendering AR scene */}
-                    <div ref={arContainerRef} style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 1000, pointerEvents: 'none' }} />
+                    <div ref={arContainerRef} style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 1000, pointerEvents: 'auto' }} />
                 </div>
                 <footer>
                     <p style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center' }}>
