@@ -1,4 +1,3 @@
 # Helmet Configurator
 
-See it live at https://helmet-configurator.vercel.app/
-Dev log : https://twitter.com/MerlinConnected
+Assignment Submission for the course: Solving problems with programming.  
