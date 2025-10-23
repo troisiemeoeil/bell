@@ -65,13 +65,13 @@ function Customizer() {
 			<main>
 				<header>
 					<div>
-						<img
+						{/* <img
 							src='./images/logo.svg'
 							alt='logo'
 							onClick={() => {
 								state.intro = true
 							}}
-						/>
+						/> */}
 					</div>
 				</header>
 				<div className='container'>
@@ -230,13 +230,11 @@ function Customizer() {
 					<p style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center' }}>
 					
 						<a href='https://troisiemeoeil.io' target='_blank'>
-							© 2023{' '}
-							Ahmed Bk.
+							{/* © 2025{' '} */}
+							Ahmed Boulakhras
 						</a>
 						
-						<a href='https://www.bellhelmets.com/' target='_blank'>
-							Bell Helmets
-						</a>
+				
 					</p>
 				</footer>
 			</main>
