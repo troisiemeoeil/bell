@@ -233,7 +233,7 @@ function Customizer() {
                                     <button onClick={startAR}>Try in AR</button>
                                     <button>Find a dealer</button>
                                     <button>
-                                        <a href='https://gaetanjestin.com' target='_blank'>
+                                        <a href='' target='_blank'>
                                             Add to basket
                                         </a>
                                     </button>
