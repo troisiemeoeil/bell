@@ -227,12 +227,13 @@ function Customizer() {
 									<p>€ {price.toFixed(2)}</p>
 								</div>
 								<div className='total-container'>
+									<Toaster />
 									<button onClick={startAR}>Try in AR</button>
 									<button>Find a dealer</button> 
 									<button
 										onClick={(e) => {
 											e.preventDefault()
-											toast.success('This is a success toast');
+											toast.success('Product is added to basket!');
 										}}
 									>
 										<a href='' target='_blank'>
