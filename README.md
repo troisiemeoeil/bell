@@ -48,7 +48,7 @@
 - **AR Integration:** `<model-viewer>` for AR functionality, ensuring cross-platform compatibility.
 - **Hosting:** Static hosting platforms (e.g., Netlify, Vercel) for scalability and ease of deployment.
 
-![Software Architecture Flowchart](https://i.ibb.co/GQWcpsWg/flowchart.png)
+<img src="https://i.ibb.co/GQWcpsWg/flowchart.png" alt="Software Architecture Flowchart" style="width: 100%; max-width: 800px;" />
 
 **Reasoning:**  
 This architecture enables fast, interactive UI updates and easy extensibility for new features.
