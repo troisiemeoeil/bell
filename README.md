@@ -42,28 +42,50 @@
 
 ## Software Architecture
 
-- Client-side React application (see `components/overlay/Overlay.js`).
-- State managed with Valtio (`utils/store.jsx`).
-- Modular component structure for maintainability.
-- Static assets served from `public/`.
+- **Frontend:** React-based single-page application (SPA) with modular components for maintainability.
+- **State Management:** Valtio (`utils/store.jsx`) for reactive state updates.
+- **Static Assets:** Assets like `.hdr` environment maps and `.glb` models are served from the `public` directory.
+- **AR Integration:** `<model-viewer>` for AR functionality, ensuring cross-platform compatibility.
+- **Hosting:** Static hosting platforms (e.g., Netlify, Vercel) for scalability and ease of deployment.
+
+![Software Architecture Flowchart](./flowchart.png)
 
 **Reasoning:**  
 This architecture enables fast, interactive UI updates and easy extensibility for new features.
 
 ## Ensuring Correct Functioning
 
-- Use of React and Valtio for predictable state management.
-- Unit and integration tests (can be added for critical logic).
-- Manual testing of UI flows.
-- Error boundaries and fallback UI for robustness.
+- **Testing:**
+  - Unit tests for individual components (e.g., `OuterShell.jsx`, `Sticker.jsx`) to ensure they render correctly.
+  - Integration tests for the `Overlay.js` and `Customizer` components to verify the flow of the customization process.
+  - Manual testing of AR functionality on supported devices (Android and iOS).
+  - Cross-browser testing to ensure compatibility with Chrome, Safari, and Edge.
+
+- **Error Handling:**
+  - Add fallback UI for cases where assets (e.g., `.glb` models) fail to load.
+  - Handle state-related errors gracefully in `utils/store.jsx`.
+
+- **Performance Optimization:**
+  - Optimize `.glb` models and images to reduce load times.
+  - Use lazy loading for assets to improve initial page load performance.
 
 ## Usability Considerations
 
-- Clear navigation between intro and customization.
-- Visual feedback for selections (active states).
-- Accessible buttons and labels.
-- Responsive layout for different devices.
-- Tooltips and tips for user guidance.
+- **Responsive Design:**
+  - The app is designed to work on both desktop and mobile devices, as evident from the AR functionality and the use of `<model-viewer>`.
+
+- **Intuitive Navigation:**
+  - The `Intro` and `Customizer` components provide a clear flow for users to start customizing their helmets.
+
+- **Accessibility:**
+  - Use of alt attributes for images (e.g., `<img src="./images/item-${color}.png" alt={color} />`) ensures screen reader compatibility.
+  - AR button placement and styling make it easy to find and use.
+
+- **Visual Feedback:**
+  - Active states for buttons (e.g., `className={snap.color === color ? 'active' : ''}`) provide immediate feedback on user selections.
+
+- **AR Integration:**
+  - The AR feature allows users to visualize the helmet in their environment, enhancing the user experience and reducing uncertainty.
 
 ## How to Use the Program
 
@@ -71,9 +93,13 @@ This architecture enables fast, interactive UI updates and easy extensibility fo
 2. Start from the intro screen and click "Customize".
 3. Select helmet options: finish, aspect, size, decals, environment.
 4. Review the total price.
-5. Add to basket or find a dealer for purchase.
-6. Use navigation and footer links for more information.
+5. Use the "Try in AR" button to visualize the helmet in your environment.
+6. Add to basket or find a dealer for purchase.
+7. Use navigation and footer links for more information.
 
+---
+
+For more details, see the source code in [components/overlay/Overlay.js](components/overlay/Overlay.js) and [utils/store.jsx](utils/store.jsx).
 ---
 
 For more details, see the source code in [components/overlay/Overlay.js](components/overlay/Overlay.js) and [utils/store.jsx](utils/store.jsx).
