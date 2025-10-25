@@ -2,7 +2,7 @@ import { useSnapshot } from 'valtio'
 import { state } from '../../utils/store'
 import { HexColorPicker } from 'react-colorful'
 import { useState, useRef } from 'react'
-
+import { Toaster, toast } from 'sonner';
 export default function Overlay() {
 	const snap = useSnapshot(state)
 	return snap.intro ? <Intro /> : <Customizer />
@@ -43,12 +43,37 @@ function Customizer() {
 	const size = ['XS', 'S', 'SM', 'M', 'L', 'XL']
 
 	const snap = useSnapshot(state)
-
+	const [price, setPrice] = useState(1299.0) // Base price
 	const [redBullSticker, setRedBullSticker] = useState(false)
 	const [bellSticker, setBellSticker] = useState(false)
 	const [clearcoat, setClearcoat] = useState(false)
 
 	const arContainerRef = useRef(null)
+
+	// Function to update the price based on selected options
+	const updatePrice = (optionType, value) => {
+		let updatedPrice = price
+
+		switch (optionType) {
+			case 'color':
+				updatedPrice = 1299.0 // Base price (color doesn't affect price in this example)
+				break
+			case 'size':
+				updatedPrice += 0 // No additional cost for size
+				break
+			case 'clearcoat':
+				updatedPrice += value ? 50 : -50 // Add/remove clearcoat cost
+				break
+			case 'sticker':
+				updatedPrice += value ? 20 : -20 // Add/remove sticker cost
+				break
+			default:
+				break
+		}
+
+		setPrice(updatedPrice)
+	}
+
 
 	function openHideBig(e) {
 		const p = e.currentTarget.nextElementSibling
@@ -71,13 +96,7 @@ function Customizer() {
 			<main>
 				<header>
 					<div>
-						{/* <img
-                            src='./images/logo.svg'
-                            alt='logo'
-                            onClick={() => {
-                                state.intro = true
-                            }}
-                        /> */}
+
 					</div>
 				</header>
 				<div className='container'>
@@ -105,6 +124,7 @@ function Customizer() {
 											className={snap.color === color ? 'active' : ''}
 											onClick={() => {
 												state.color = color
+												updatePrice('color', color)
 											}}
 										>
 											<img src={`./images/item-${color}.png`} alt={color} />
@@ -126,6 +146,7 @@ function Customizer() {
 										onClick={() => {
 											setClearcoat(false)
 											state.clearcoat = true
+											updatePrice('clearcoat', true)
 										}}
 									>
 										With clearcoat
@@ -135,6 +156,7 @@ function Customizer() {
 										onClick={() => {
 											setClearcoat(true)
 											state.clearcoat = false
+											updatePrice('clearcoat', false)
 										}}
 									>
 										Without clearcoat
@@ -156,6 +178,7 @@ function Customizer() {
 											className={snap.size === size ? 'active' : ''}
 											onClick={() => {
 												state.size = size
+												updatePrice('size', size)
 											}}
 										>
 											{size}
@@ -177,18 +200,20 @@ function Customizer() {
 										onClick={() => {
 											setBellSticker(!bellSticker)
 											state.bellSticker = !state.bellSticker
+											updatePrice('sticker', !bellSticker)
 										}}
 									>
-										Bell
+										Bell (+€20)
 									</button>
 									<button
 										className={redBullSticker ? 'active' : ''}
 										onClick={() => {
 											setRedBullSticker(!redBullSticker)
 											state.redBullSticker = !state.redBullSticker
+											updatePrice('sticker', !redBullSticker)
 										}}
 									>
-										Redbull
+										Redbull (+€20)
 									</button>
 								</div>
 							</div>
@@ -199,12 +224,17 @@ function Customizer() {
 										<h3>Total :</h3>
 										<p>Excluding VAT.</p>
 									</div>
-									<p>€ 1,299.0</p>
+									<p>€ {price.toFixed(2)}</p>
 								</div>
 								<div className='total-container'>
 									<button onClick={startAR}>Try in AR</button>
-									<button>Find a dealer</button>
-									<button>
+									<button>Find a dealer</button> 
+									<button
+										onClick={(e) => {
+											e.preventDefault()
+											toast.success('This is a success toast');
+										}}
+									>
 										<a href='' target='_blank'>
 											Add to basket
 										</a>
