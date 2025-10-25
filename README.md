@@ -48,7 +48,7 @@
 - **AR Integration:** `<model-viewer>` for AR functionality, ensuring cross-platform compatibility.
 - **Hosting:** Static hosting platforms (e.g., Netlify, Vercel) for scalability and ease of deployment.
 
-![Software Architecture Flowchart](./flowchart.png)
+![Software Architecture Flowchart](https://ibb.co/Jjv5txvX)
 
 **Reasoning:**  
 This architecture enables fast, interactive UI updates and easy extensibility for new features.
@@ -101,5 +101,3 @@ This architecture enables fast, interactive UI updates and easy extensibility fo
 
 For more details, see the source code in [components/overlay/Overlay.js](components/overlay/Overlay.js) and [utils/store.jsx](utils/store.jsx).
 ---
-
-For more details, see the source code in [components/overlay/Overlay.js](components/overlay/Overlay.js) and [utils/store.jsx](utils/store.jsx).
