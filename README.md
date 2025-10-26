@@ -1,44 +1,71 @@
-# Helmet Configurator
+# Helmet Customization Configurator
 
-## Problem Aspects Solvable by a Program
+## I. Problem Aspect Solved by the Program
 
-- Allowing users to visually customize helmet features (color, finish, size, decals, environment).
-- Providing instant feedback and previews for selections.
-- Streamlining the process of selecting and ordering a customized helmet.
+The configurator addresses the complexity and inefficiency of manual helmet customization and visualization. Previously, customers or designers had to:
 
-## Changes to the Original Process
+- Describe desired designs verbally or via email  
+- Manually create mock-ups using design software  
+- Go through multiple revisions before reaching a satisfactory result  
 
-- Replaces manual or paper-based selection with an interactive web interface.
-- Reduces errors and ambiguity in customer choices.
-- Speeds up the configuration and ordering process.
+The program automates this process by allowing users to visually customize helmets in real time and instantly see the results.
 
-## Program Requirements
+---
 
-- Intuitive UI for customization.
-- Real-time state management for selections.
-- Responsive design for various devices.
-- Integration with product images and environment maps.
-- Option to add products to basket or find a dealer.
+## II. How Solving the Problem with a Program Changes the Original Process
 
-## Changes to the Operating Model
+The original workflow was manual, time-consuming, and prone to miscommunication. Implementing the configurator:
 
-- Customers interact directly with the configurator, reducing the need for sales staff intervention.
-- Dealers receive more accurate, pre-configured orders.
-- The process becomes more self-service and scalable.
+- Reduces back-and-forth communication between customers and manufacturers  
+- Enables immediate visualization of design choices  
+- Increases user engagement and accuracy  
+- Simplifies the ordering process, allowing direct transfer of finalized designs to production  
 
-## Business Benefits: Customer Retention
+This transforms a consultative, manual workflow into an interactive, digital design experience.
 
-- **Personalization:** Customers can tailor products to their preferences, increasing satisfaction and loyalty.
-- **Engagement:** Interactive experience encourages longer site visits and repeat usage.
-- **Accuracy:** Reduces errors in orders, improving customer trust and reducing returns.
-- **Self-Service:** Empowers customers to explore options independently, freeing up sales resources.
+---
 
-## Technical Benefits: SEO
+## III. Program Requirements
 
-- **Client-Side Rendering:** Fast, interactive UI improves user experience metrics (dwell time, bounce rate).
-- **Semantic HTML:** Use of headings, alt tags, and accessible navigation helps search engines index content.
-- **Shareable URLs:** Configurator can be extended to generate shareable links for specific configurations.
-- **Performance:** Lightweight, static deployment ensures fast load times, which is favored by search engines.
+To effectively address the problem, the program must:
+
+- Provide an intuitive and responsive user interface  
+- Support real-time rendering of helmet configurations (colors, materials, accessories)  
+- Ensure compatibility across devices and browsers  
+- Integrate with e-commerce or order management systems if needed  
+- Allow configurations to be stored or exported (e.g., as images, JSON, or design files)  
+
+**Optional but valuable features:**
+
+- 3D model integration for enhanced realism  
+- Performance optimization for smooth rendering  
+- Accessibility compliance for all users  
+
+---
+
+## IV. How the Program Changes the Original Operating Model
+
+The configurator shifts the operating model from manual customer service and design assistance to a scalable, self-service digital experience:
+
+- Customers act as co-creators of their products  
+- Staff focus more on production and less on communication overhead  
+- Orders are more accurate and faster to process  
+- The business can scale to serve many users simultaneously  
+
+This transition turns a personalized design service into a modern, scalable digital product workflow.
+
+---
+
+## V. Use Cases
+
+The configurator can be used in various contexts:
+
+- **Customers:** Browsing and customizing helmets before purchase  
+- **Sales/Marketing Teams:** Demonstrating available customization options  
+- **Trade Shows/Retail Displays:** Offering interactive visualization of helmet styles  
+- **Manufacturers:** Collecting accurate design specifications for production  
+
+In essence, the program is used wherever visual, interactive helmet design and personalization are required.
 
 ## Software Architecture
 
@@ -48,7 +75,7 @@
 - **AR Integration:** `<model-viewer>` for AR functionality, ensuring cross-platform compatibility.
 - **Hosting:** Static hosting platforms (e.g., Netlify, Vercel) for scalability and ease of deployment.
 
-<img src="https://i.ibb.co/GQWcpsWg/flowchart.png" alt="Software Architecture Flowchart" style="width: 100%; max-width: 800px; height: 300px"  />
+<img src="https://i.ibb.co/GQWcpsWg/flowchart.png" alt="Software Architecture Flowchart" style="width: 100%;  height: 100%"  />
 
 **Reasoning:**  
 This architecture enables fast, interactive UI updates and easy extensibility for new features.

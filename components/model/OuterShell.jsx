@@ -55,7 +55,7 @@ export default function OuterShell(props) {
 			? greyAlbedo
 			: snap.color === 'brown'
 			? brownAlbedo
-			: redAlbedo
+			: greenAlbedo
 
 	const normal = useTexture('/tex/outer-shell/helmet-outer-shell-normal.webp', (texture) => {
 		texture.flipY = false
@@ -78,7 +78,7 @@ export default function OuterShell(props) {
 				<meshPhysicalMaterial
 					map={albedo}
 					normalMap={normal}
-					// metalnessMap={metalness}
+					metalnessMap={metalness}
 					roughnessMap={roughness}
 					roughness={1.5}
 					clearcoat={1}

@@ -15,7 +15,6 @@ function Intro() {
 			</header>
 			<div className='container'>
 				<div>
-					{/* <h1>Bell Helmet</h1> */}
 					<button
 						className='btn btn_primary'
 						onClick={() => {
